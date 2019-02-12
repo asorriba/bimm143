@@ -2,7 +2,7 @@
 #' title: "Class 05 R graphics intro"
 #' author: "Angel Sorri-Battaroff"
 #' date: "January 24th, 2019"
-#' output: pdf_document
+#' output: github_document
 #' ---
 
 #' Class 05 R graphics intro
