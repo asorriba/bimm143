@@ -1,0 +1,84 @@
+---
+title: "Class 18: Genomics Cancer"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+###NCI Genomic Data Commons
+
+Lets talk to the NCI-GD
+```{r}
+library(GenomicDataCommons)
+library(TCGAbiolinks)
+library(maftools)
+```
+
+```{r}
+status()
+```
+
+```{r}
+cases_by_project <- cases() %>%
+  facet("project.project_id") %>%
+  aggregations()
+head(cases_by_project)
+```
+
+```{r}
+x <- cases_by_project$project.project_id
+
+barplot(x$doc_count, names.arg = x$key, las=2, log="y")
+
+# Make a custom color vector for our plot
+colvec <- rep("lightblue", nrow(x))
+colvec[] <- "red"
+
+# Plot with 'log' for y axis and rotate labels with 'las'
+#par(___)  
+barplot(___, names.arg=___, log="y", col=colvec, las=2)
+```
+
+```{r}
+query <- GDCquery(project="TCGA-PAAD",
+                  data.category="Transcriptome Profiling",
+                  data.type="Gene Expression Quantification")
+
+ans <- getResults(query)
+head(ans)
+```
+
+```{r}
+maf.file <- GDCquery_Maf(tumor="PAAD", pipelines = "mutect")
+```
+```{r}
+head(maf.file)
+```
+
+```{r}
+vars = read.maf(maf = maf.file, verbose = FALSE)
+```
+
+```{r}
+plotmafSummary(vars)
+```
+
+```{r}
+lollipopPlot(vars, gene='TP53')
+```
+
+
+##PART 2
+
+```{r}
+library("bio3d")
+```
+
+```{r}
+x <- read.fasta("lecture18_sequences.fa")
+seqaln(x)
+```
+

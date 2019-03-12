@@ -1,0 +1,96 @@
+---
+title: "Class11: Structural Bioinformatics 1"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Section 1. The PDB
+
+Q1.Determine the percentage of structures solved by X-Ray and Electron Microscopy.  From the website what proportion of structures are protein?
+
+```{r}
+stats <- read.csv("Data Export Summary.csv")
+stats
+```
+
+Percentage of structures solved by X-ray
+```{r}
+x <- sum(stats[1,2:5])
+y <- sum(stats[,6])
+x/y
+```
+
+```{r}
+percent.by.method <- stats$Total/sum(stats$Total)*100
+names(percent.by.method) <- rownames(stats)
+percent.by.method
+```
+
+Percentage of structures solved by proteins
+```{r}
+sum(stats$Proteins)/sum(stats$Total)*100
+```
+
+##Section 3
+```{r}
+installed.packages("bio3d")
+```
+
+First we have to load our package we want to use
+```{r}
+library(bio3d)
+```
+How wany residues? 198
+```{r}
+pdb <- read.pdb("1hsg")
+pdb
+```
+
+```{r}
+pdb$atom
+```
+
+3 letter codes
+```{r}
+pdb$atom$resid
+```
+
+```{r}
+aa321(pdb$atom$resid)
+```
+
+
+```{r}
+#Read pdb
+pdb
+```
+
+We want to select out the protein and drug only parts of these molecular PDB files.
+```{r}
+#Do atom selection for a protein only file
+prot.inds <- atom.select(pdb,'protein')
+prot.inds
+lig.inds <- atom.select(pdb, 'ligand')
+lig.inds
+```
+
+protein
+```{r}
+prot.pdb <- trim.pdb(pdb, prot.inds)
+write.pdb(prot.pdb, file="protein.pdb")
+```
+
+the drug/ligand
+```{r}
+lig.pdb <- trim.pdb(pdb, lig.inds)
+write.pdb(lig.pdb, file="lig.pdb")
+```
+
+```{r}
+library(bio3d.view)
+view(pdb, "overview")
+```
+
