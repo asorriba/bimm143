@@ -7,6 +7,6 @@ This is a store of my class-work for [BIMM143 Winter 2019](https://bioboot.githu
 - Class 05 [R Graphics]
 - Class 06 [R Functions]
 - Class 11 [Structural Bioinformatics](class11.md)
-- Class 14 [Genome Informatics]
+- Class 14 [Genome Informatics](class14.md)
 - Class 15 [Transcriptomics and the analysis of RNA-Seq data](class15.md)
 - Class 16 [Pathway analysis from RNA-seq results](class16.md)
