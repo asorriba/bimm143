@@ -7,3 +7,5 @@ This is a store of my class-work for [BIMM143 Winter 2019](https://bioboot.githu
 - Class 05 [R Graphics](class05.R)
 - Class 06 [R Functions]
 - Class 11 [Structural Bioinformatics](class11.Rmd)
+- Class 14 [Genome Informatics](class14.Rmd)
+- Class 15
