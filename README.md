@@ -3,7 +3,6 @@
 This is a store of my class-work for [BIMM143 Winter 2019](https://bioboot.github.io/bimm143_W19/) at UC San Diego.
 
 ## Contents
-- Class 04 [Introduction to R]
 - Class 05 [R Graphics](class05.md)
 - Class 06 [R Functions](class_06.md)
 - Class 09 [Unsupervised Learning Mini-Project](class_09.md)
