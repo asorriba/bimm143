@@ -4,8 +4,8 @@ This is a store of my class-work for [BIMM143 Winter 2019](https://bioboot.githu
 
 ## Contents
 - Class 04 [Introduction to R]
-- Class 05 [R Graphics](class05.R)
+- Class 05 [R Graphics]
 - Class 06 [R Functions]
-- Class 11 [Structural Bioinformatics](class11.Rmd)
-- Class 14 [Genome Informatics](class14.Rmd)
-- Class 15
+- Class 11 [Structural Bioinformatics](class11.md)
+- Class 14 [Genome Informatics]
+- Class 15 [Transcriptomics and the analysis of RNA-Seq data](class15.md)
