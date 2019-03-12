@@ -9,3 +9,4 @@ This is a store of my class-work for [BIMM143 Winter 2019](https://bioboot.githu
 - Class 11 [Structural Bioinformatics](class11.md)
 - Class 14 [Genome Informatics]
 - Class 15 [Transcriptomics and the analysis of RNA-Seq data](class15.md)
+- Class 16 [Pathway analysis from RNA-seq results](class16.md)
